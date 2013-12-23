@@ -1,0 +1,13 @@
+{
+	"name": "modern-media/wp-aws-s3",
+	"description": "WordPress Plugin that automatically copies media uploads to Amazon S3 for storage and delivery.",
+	"type": "wordpress-plugin",
+	"require":{
+		"aws/aws-sdk-php": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"ModernMedia\\": "src/"
+		}
+	}
+}
