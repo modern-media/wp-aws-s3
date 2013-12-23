@@ -14,7 +14,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"ModernMedia\\AWSS3\\": "src/"
+			"ModernMedia\\": "src/"
 		}
 	}
 }
