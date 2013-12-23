@@ -171,12 +171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modern-media/wp-lib.git",
-                "reference": "45586a6a93fd93e5af8a5a974d036f81ed0d1338"
+                "reference": "59dadbd441ccced824d3528b4bd9e2d0bdd439ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/45586a6a93fd93e5af8a5a974d036f81ed0d1338",
-                "reference": "45586a6a93fd93e5af8a5a974d036f81ed0d1338",
+                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/59dadbd441ccced824d3528b4bd9e2d0bdd439ef",
+                "reference": "59dadbd441ccced824d3528b4bd9e2d0bdd439ef",
                 "shasum": ""
             },
             "type": "library",
@@ -190,7 +190,7 @@
                 "source": "https://github.com/modern-media/wp-lib/tree/master",
                 "issues": "https://github.com/modern-media/wp-lib/issues"
             },
-            "time": "2013-12-23 16:11:27"
+            "time": "2013-12-23 16:34:07"
         },
         {
             "name": "symfony/event-dispatcher",
