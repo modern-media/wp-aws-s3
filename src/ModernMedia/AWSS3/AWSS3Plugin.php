@@ -1,11 +1,15 @@
 <?php
 namespace ModernMedia\AWSS3;
+use ModernMedia\AWSS3\Admin\Panel\SettingsPanel;
+
 class AWSS3Plugin {
 
 	/**
 	 * @var AWSS3Plugin
 	 */
 	private static $instance;
+
+	private $settings_panel;
 
 	/**
 	 * @return AWSS3Plugin
@@ -18,7 +22,7 @@ class AWSS3Plugin {
 	}
 
 	private function __construct(){
-
+		$this->settings_panel = new SettingsPanel;
 	}
 
 } 
