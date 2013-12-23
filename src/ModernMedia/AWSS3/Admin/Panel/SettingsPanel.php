@@ -19,7 +19,7 @@ class SettingsPanel extends BaseAdminElement {
 	}
 
 	protected function on_save($post_id = null){
-		AWSS3Plugin::inst()->set_option_aws_keys($_POST);
+		AWSS3Plugin::inst()->set_option_aws($_POST);
 		$this->message = __('Settings saved!');
 	}
 } 

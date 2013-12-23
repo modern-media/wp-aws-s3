@@ -3,7 +3,7 @@ namespace ModernMedia\AWSS3;
 /**
  * @var Admin\Panel\SettingsPanel $this
  */
-$keys = AWSS3Plugin::inst()->get_option_aws_keys();
+$keys = AWSS3Plugin::inst()->get_option_aws();
 $plugin = AWSS3Plugin::inst();
 ?>
 
@@ -24,7 +24,7 @@ $plugin = AWSS3Plugin::inst();
 					name="id"
 					id="id"
 					value="<?php echo esc_attr($keys->id)?>"
-				>
+					>
 			</td>
 		</tr>
 		<tr>
@@ -41,15 +41,42 @@ $plugin = AWSS3Plugin::inst();
 					>
 			</td>
 		</tr>
+		<tr>
+			<th scope="row">
+				<label for="bucket"><?php _e('Bucket')?></label>
+			</th>
+			<td>
+				<?php
+				if ($plugin->is_option_aws_keys_valid()){
+					$client = $plugin->get_client();
+					$data = $client->listBuckets();
+					/** @var \Guzzle\Service\Resource\Model $data */
+					$buckets = $data->getAll(array('Buckets'));
+					$buckets = $buckets['Buckets'];
+					printf(
+						'<select name="bucket" id="bucket"><option value="">%s</option>',
+						__('Select a bucket...')
+					);
+					foreach($buckets as $bucket){
+						printf(
+							'<option value="%s"%s>%s</option>',
+							esc_attr($bucket['Name']),
+							$bucket['Name'] == $keys->bucket ? ' selected="selected"' : '',
+							$bucket['Name']
+						);
+					}
+					echo '</select>';
+				} else {
+					printf('<p>%s</p>', __('Invalid or empty keys.'));
+				}
+
+				?>
+			</td>
+		</tr>
 		</tbody>
 	</table>
 	<?php submit_button(__('Save Changes'));?>
 </form>
 
-<?php
-if ($plugin->is_option_aws_keys_valid()){
-	$client = $plugin->get_client();
-	$buckets = $client->listBuckets();
-	var_dump($buckets);
-}
+
  

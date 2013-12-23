@@ -2,7 +2,7 @@
 namespace ModernMedia\AWSS3;
 use Aws\S3\S3Client;
 use ModernMedia\AWSS3\Admin\Panel\SettingsPanel;
-use ModernMedia\AWSS3\Data\AWSKeys;
+use ModernMedia\AWSS3\Data\AWSOptions;
 
 class AWSS3Plugin {
 
@@ -35,12 +35,12 @@ class AWSS3Plugin {
 	}
 
 	/**
-	 * @return AWSKeys
+	 * @return AWSOptions
 	 */
-	public function get_option_aws_keys(){
+	public function get_option_aws(){
 		$o = get_option(self::OK_AWS_KEYS);
-		if (! $o instanceof AWSKeys){
-			$o = new AWSKeys;
+		if (! $o instanceof AWSOptions){
+			$o = new AWSOptions;
 		}
 		return $o;
 	}
@@ -48,8 +48,8 @@ class AWSS3Plugin {
 	/**
 	 * @param $arr
 	 */
-	public function set_option_aws_keys($arr){
-		$o = new AWSKeys($arr);
+	public function set_option_aws($arr){
+		$o = new AWSOptions($arr);
 		update_option(self::OK_AWS_KEYS, $o);
 	}
 
@@ -57,7 +57,7 @@ class AWSS3Plugin {
 	 * @return bool
 	 */
 	public function is_option_aws_keys_valid(){
-		$keys = $this->get_option_aws_keys();
+		$keys = $this->get_option_aws();
 		return ! empty($keys->id) && ! empty($keys->secret);
 	}
 
@@ -66,7 +66,7 @@ class AWSS3Plugin {
 	 */
 	public function get_client(){
 		if (! $this->client instanceof S3Client){
-			$keys = $this->get_option_aws_keys();
+			$keys = $this->get_option_aws();
 			$this->client = S3Client::factory(array(
 				'key'    => $keys->id,
 				'secret' => $keys->secret
