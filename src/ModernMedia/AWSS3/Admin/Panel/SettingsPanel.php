@@ -13,7 +13,7 @@ class SettingsPanel extends BaseAdminElement {
 		parent::__construct($init);
 	}
 
-	protected function html(){
+	protected function html($post_id = null){
 		echo 'Hello';
 	}
 } 
