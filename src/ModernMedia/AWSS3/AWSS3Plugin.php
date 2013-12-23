@@ -18,6 +18,7 @@ class AWSS3Plugin {
 	}
 
 	private function __construct(){
+
 	}
 
 } 

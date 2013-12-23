@@ -171,18 +171,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modern-media/wp-lib.git",
-                "reference": "9ee47e741a0f7c12410cd48af40ab98a258ba59b"
+                "reference": "45586a6a93fd93e5af8a5a974d036f81ed0d1338"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/9ee47e741a0f7c12410cd48af40ab98a258ba59b",
-                "reference": "9ee47e741a0f7c12410cd48af40ab98a258ba59b",
+                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/45586a6a93fd93e5af8a5a974d036f81ed0d1338",
+                "reference": "45586a6a93fd93e5af8a5a974d036f81ed0d1338",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "ModernMedia\\WPLib": "src/"
+                    "ModernMedia\\": "src/"
                 }
             },
             "description": "WordPress patterns and utilities.",
@@ -190,7 +190,7 @@
                 "source": "https://github.com/modern-media/wp-lib/tree/master",
                 "issues": "https://github.com/modern-media/wp-lib/issues"
             },
-            "time": "2013-12-23 04:36:06"
+            "time": "2013-12-23 16:11:27"
         },
         {
             "name": "symfony/event-dispatcher",
