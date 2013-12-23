@@ -14,6 +14,6 @@ class SettingsPanel extends BaseAdminElement {
 	}
 
 	protected function html($post_id = null){
-		echo 'Hello';
+		require MODERN_MEDIA_AWS_S3_PATH . '/inc/settings_panel.php';
 	}
 } 
