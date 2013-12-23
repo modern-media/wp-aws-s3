@@ -74,6 +74,49 @@
             "time": "2013-12-20 23:18:30"
         },
         {
+            "name": "ccampbell/chromephp",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ccampbell/chromephp.git",
+                "reference": "c3c297615d48ae5b2a86a82311152d1ed095fcef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ccampbell/chromephp/zipball/c3c297615d48ae5b2a86a82311152d1ed095fcef",
+                "reference": "c3c297615d48ae5b2a86a82311152d1ed095fcef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ChromePhp": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Craig Campbell",
+                    "email": "iamcraigcampbell@gmail.com",
+                    "homepage": "http://craig.is",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Log variables to the Chrome console (via Chrome Logger Google Chrome extension).",
+            "homepage": "http://github.com/ccampbell/chromephp",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2013-06-26 03:44:33"
+        },
+        {
             "name": "guzzle/guzzle",
             "version": "v3.8.0",
             "source": {
@@ -171,13 +214,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modern-media/wp-lib.git",
-                "reference": "48c7c3b7024d323dc920fa607edcc38d3e594be4"
+                "reference": "7cdb7838e93f1d627e118d7fed346a686143504c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/48c7c3b7024d323dc920fa607edcc38d3e594be4",
-                "reference": "48c7c3b7024d323dc920fa607edcc38d3e594be4",
+                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/7cdb7838e93f1d627e118d7fed346a686143504c",
+                "reference": "7cdb7838e93f1d627e118d7fed346a686143504c",
                 "shasum": ""
+            },
+            "require": {
+                "ccampbell/chromephp": "*",
+                "monolog/monolog": "1.7.*@dev"
             },
             "type": "library",
             "autoload": {
@@ -190,7 +237,112 @@
                 "source": "https://github.com/modern-media/wp-lib/tree/master",
                 "issues": "https://github.com/modern-media/wp-lib/issues"
             },
-            "time": "2013-12-23 18:41:43"
+            "time": "2013-12-23 21:26:02"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "6225b22de9dcf36546be3a0b2fa8e3d986153f57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6225b22de9dcf36546be3a0b2fa8e3d986153f57",
+                "reference": "6225b22de9dcf36546be3a0b2fa8e3d986153f57",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~2.4.8",
+                "doctrine/couchdb": "dev-master",
+                "mlehner/gelf-php": "1.0.*",
+                "phpunit/phpunit": "~3.7.0",
+                "raven/raven": "0.5.*",
+                "ruflin/elastica": "0.90.*"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "raven/raven": "Allow sending log messages to a Sentry server",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Monolog": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2013-11-14 19:48:31"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "symfony/event-dispatcher",

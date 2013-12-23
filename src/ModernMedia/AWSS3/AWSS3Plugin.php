@@ -3,6 +3,7 @@ namespace ModernMedia\AWSS3;
 use Aws\S3\S3Client;
 use ModernMedia\AWSS3\Admin\Panel\SettingsPanel;
 use ModernMedia\AWSS3\Data\AWSOptions;
+use ModernMedia\WPLib\Debugger;
 
 class AWSS3Plugin {
 
@@ -31,7 +32,13 @@ class AWSS3Plugin {
 
 	private function __construct(){
 		$this->settings_panel = new SettingsPanel;
+		add_filter('wp_update_attachment_metadata', array($this, '_filter_wp_update_attachment_metadata'), 10, 2);
 
+	}
+
+	public function  _filter_wp_update_attachment_metadata($data, $post_id){
+		Debugger::inst()->add('attachment_metadata', $data);
+		return $data;
 	}
 
 	/**
