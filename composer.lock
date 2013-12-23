@@ -11,18 +11,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modern-media/wp-lib.git",
-                "reference": "0d432986eca642da6a53bc4dffdb2868f1ec9281"
+                "reference": "9ee47e741a0f7c12410cd48af40ab98a258ba59b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/0d432986eca642da6a53bc4dffdb2868f1ec9281",
-                "reference": "0d432986eca642da6a53bc4dffdb2868f1ec9281",
+                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/9ee47e741a0f7c12410cd48af40ab98a258ba59b",
+                "reference": "9ee47e741a0f7c12410cd48af40ab98a258ba59b",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "ModernMedia\\": "src/"
+                    "ModernMedia\\WPLib": "src/"
                 }
             },
             "description": "WordPress patterns and utilities.",
@@ -30,7 +30,7 @@
                 "source": "https://github.com/modern-media/wp-lib/tree/master",
                 "issues": "https://github.com/modern-media/wp-lib/issues"
             },
-            "time": "2013-12-23 04:03:29"
+            "time": "2013-12-23 04:36:06"
         }
     ],
     "packages-dev": [
