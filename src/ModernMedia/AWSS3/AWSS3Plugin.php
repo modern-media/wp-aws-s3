@@ -15,6 +15,11 @@ class AWSS3Plugin {
 	private $settings_panel;
 
 	/**
+	 * @var S3Client
+	 */
+	private $client = null;
+
+	/**
 	 * @return AWSS3Plugin
 	 */
 	public static function inst(){
@@ -46,6 +51,28 @@ class AWSS3Plugin {
 	public function set_option_aws_keys($arr){
 		$o = new AWSKeys($arr);
 		update_option(self::OK_AWS_KEYS, $o);
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_option_aws_keys_valid(){
+		$keys = $this->get_option_aws_keys();
+		return ! empty($keys->id) && ! empty($keys->secret);
+	}
+
+	/**
+	 * @return S3Client
+	 */
+	public function get_client(){
+		if (! $this->client instanceof S3Client){
+			$keys = $this->get_option_aws_keys();
+			$this->client = S3Client::factory(array(
+				'key'    => $keys->id,
+				'secret' => $keys->secret
+			));
+		}
+		return $this->client;
 	}
 
 } 

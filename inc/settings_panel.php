@@ -4,6 +4,7 @@ namespace ModernMedia\AWSS3;
  * @var Admin\Panel\SettingsPanel $this
  */
 $keys = AWSS3Plugin::inst()->get_option_aws_keys();
+$plugin = AWSS3Plugin::inst();
 ?>
 
 <form method="post" action="<?php echo $this->get_panel_url($this->get_id())?>">
@@ -44,4 +45,11 @@ $keys = AWSS3Plugin::inst()->get_option_aws_keys();
 	</table>
 	<?php submit_button(__('Save Changes'));?>
 </form>
+
+<?php
+if ($plugin->is_option_aws_keys_valid()){
+	$client = $plugin->get_client();
+	$buckets = $client->listBuckets();
+	var_dump($buckets);
+}
  
