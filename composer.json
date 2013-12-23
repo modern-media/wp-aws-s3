@@ -9,11 +9,12 @@
 		}
 	],
 	"require":{
-		"modern-media/wp-lib": "dev-master"
+		"modern-media/wp-lib": "dev-master",
+		"aws/aws-sdk-php": "2.*"
 	},
 	"autoload": {
 		"psr-0": {
-			"ModernMedia\\": "src/"
+			"ModernMedia\\AWSS3\\": "src/"
 		}
 	}
 }
