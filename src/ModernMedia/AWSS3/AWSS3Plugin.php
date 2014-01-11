@@ -38,6 +38,40 @@ class AWSS3Plugin {
 
 	public function  _filter_wp_update_attachment_metadata($data, $post_id){
 		Debugger::inst()->add('attachment_metadata', $data);
+		$unique = substr(md5($data['file']), 0, 5);
+		$client = $this->get_client();
+		$path = dirname($data['file']);
+		$filename = basename($data['file']);
+		$source_path = WP_CONTENT_DIR . '/uploads/' . $path;
+		$opts = $this->get_option_aws();
+		$result = $client->putObject(array(
+			'Bucket'     => $opts->bucket,
+			'Key'        => $unique . '/' . $filename,
+			'SourceFile' => $source_path . '/' . $filename,
+			'ACL'        => 'public-read',
+			'Metadata'   => array(
+				'height' => $data['height'],
+				'width' => $data['width']
+			)
+		));
+		/** @var \Guzzle\Service\Resource\Model $result */
+		$data['s3_url'] = $result->get('ObjectURL');
+		Debugger::inst()->add('result', $result);
+		foreach($data['sizes'] as $size => $info){
+			$result = $client->putObject(array(
+				'Bucket'     => $opts->bucket,
+				'Key'        => $unique . '/' . $info['file'],
+				'SourceFile' => $source_path . '/' . $info['file'],
+				'ACL'        => 'public-read',
+				'Metadata'   => array(
+					'height' => $info['height'],
+					'width' => $info['width']
+				)
+			));
+			$data[$size]['s3_url'] = $result->get('ObjectURL');
+		}
+
+		wp_get_attachment_image_src()
 		return $data;
 	}
 
