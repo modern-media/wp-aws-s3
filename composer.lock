@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "47169349e4f6ca0f6947a08b269ece99",
+    "hash": "83a92036446e0b3e8eff47c8e66949c1",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d5c54a4f3cfcc05308ce00f8d4fb119d99bfc0a9"
+                "reference": "0159ef9178a87bdb24dca8e26a0dc6e87c69f054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d5c54a4f3cfcc05308ce00f8d4fb119d99bfc0a9",
-                "reference": "d5c54a4f3cfcc05308ce00f8d4fb119d99bfc0a9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0159ef9178a87bdb24dca8e26a0dc6e87c69f054",
+                "reference": "0159ef9178a87bdb24dca8e26a0dc6e87c69f054",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2013-12-20 23:18:30"
+            "time": "2014-01-09 21:21:41"
         },
         {
             "name": "ccampbell/chromephp",
@@ -214,12 +214,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modern-media/wp-lib.git",
-                "reference": "7cdb7838e93f1d627e118d7fed346a686143504c"
+                "reference": "2922ef10532934a3402a2a261ad4cda79c8e0f70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/7cdb7838e93f1d627e118d7fed346a686143504c",
-                "reference": "7cdb7838e93f1d627e118d7fed346a686143504c",
+                "url": "https://api.github.com/repos/modern-media/wp-lib/zipball/2922ef10532934a3402a2a261ad4cda79c8e0f70",
+                "reference": "2922ef10532934a3402a2a261ad4cda79c8e0f70",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 "source": "https://github.com/modern-media/wp-lib/tree/master",
                 "issues": "https://github.com/modern-media/wp-lib/issues"
             },
-            "time": "2013-12-23 21:26:02"
+            "time": "2014-01-10 18:45:32"
         },
         {
             "name": "monolog/monolog",
@@ -346,17 +346,17 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "acd1707236f6eb96fbb8d58f63d289b72ebc2f6e"
+                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/acd1707236f6eb96fbb8d58f63d289b72ebc2f6e",
-                "reference": "acd1707236f6eb96fbb8d58f63d289b72ebc2f6e",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e3ba42f6a70554ed05749e61b829550f6ac33601",
+                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601",
                 "shasum": ""
             },
             "require": {
@@ -396,7 +396,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-03 14:52:22"
+            "time": "2013-12-28 08:12:03"
         }
     ],
     "packages-dev": [
