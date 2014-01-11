@@ -71,7 +71,6 @@ class AWSS3Plugin {
 			$data[$size]['s3_url'] = $result->get('ObjectURL');
 		}
 
-		wp_get_attachment_image_src()
 		return $data;
 	}
 
